@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import KeyboardComponent from "./components/Keyboard/KeyboardComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <span className="message">Calling...</span>
+        <main className="phone">
+          <KeyboardComponent />
+          <div className="actions">
+            <span className="number">667359961</span>
+            <a href>Call</a>
+            <a href>Hang</a>
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
 
