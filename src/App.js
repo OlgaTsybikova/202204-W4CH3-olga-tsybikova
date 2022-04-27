@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import KeyboardComponent from "./components/Keyboard/KeyboardComponent";
-export const TelefonoContext = React.createContext();
+import InfoComponent from "./components/InfoComponent/InfoComponent";
+import Context from "./components/context/Context";
 function App() {
-  const [iscalling, setIsCalling] = useState(false);
+  const [isCalling, setIsCalling] = useState(false);
   return (
     <>
-      <TelefonoContext.Provider value={iscalling}>
+      <Context.Provider value={isCalling}>
         <div className="container">
-          <span className="message">Calling...</span>
+          <InfoComponent isCalling={isCalling} />
           <main className="phone">
             <div className="keyboard-container">
-              <KeyboardComponent />
+              <KeyboardComponent isCalling={isCalling} />
             </div>
             <div className="actions">
               <span className="number">667359961</span>
@@ -19,7 +20,7 @@ function App() {
             </div>
           </main>
         </div>
-      </TelefonoContext.Provider>
+      </Context.Provider>
     </>
   );
 }
