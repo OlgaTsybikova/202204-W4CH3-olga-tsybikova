@@ -1,5 +1,6 @@
+import React, { useState } from "react";
 import KeyboardComponent from "./components/Keyboard/KeyboardComponent";
-
+export const TelefonoContext = React.createContext();
 function App() {
   return (
     <>
