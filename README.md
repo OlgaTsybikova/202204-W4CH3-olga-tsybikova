@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Week 4 - Challenge 3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Teléfono React
 
-## Available Scripts
+Aquí tienes la maquetación HTML/CSS de una aplicación, tendrás que programarla en React.
 
-In the project directory, you can run:
+- Se debe poder escribir un número de teléfono clicando en los botones numéricos. La tecla borrar puede borrar el último dígito o borrar el número completo, como prefieras.
+- Sólo se verá o el botón Llamar o el botón Colgar, nunca los dos a la vez.
+- No se puede introducir un número de más de 9 cifras.
+- El botón Llamar sólo se puede pulsar si el número tiene 9 cifras. Cuando tenga 9 cifras el botón debe tener la clase "active".
+- El mensaje superior "Llamando..." sólo aparece cuando se pulsa el botón "Llamar" y mientras dure la llamada. Usa la clase "off" para controlar su visibilidad (el elemento HTML correspondiente debe seguir estando, aunque no se vea).
+- Al pulsar el botón "Llamar", éste debe desaparecer del DOM y debe aparecer en su lugar el botón "Colgar". El teclado tiene que quedar deshabilitado.
+- Al pulsar el botón "Colgar", éste debe desaparecer y debe aparecer en su lugar el botón "Llamar". El teclado tiene que habilitarse. Además, se debe borrar el número de teléfono.
+- Si no ocurre nada tras cinco segundos de llamada, ésta se debe colgar automáticamente.
 
-### `npm start`
+Separa todo en los siguientes componentes:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Info
+- Display
+- Actions
+  - Action
+- Keyboard
+  - Key
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Guarda los estados comunes en un context.
 
-### `npm test`
+##App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Sólo se verá o el botón Llamar o el botón Colgar de pendiendo del estado.
 
-### `npm run build`
+##Info
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Renderiza un texto
+- Estado de llamada
+- Estado de llamada termimada
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Display
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Renderiza un componente action/input con numeros recibidos.
+- Estado llamada
+- Estado llamada terminada
 
-### `npm run eject`
+##Actions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Renderiza un botton Call que se activa cuando display tiene 9 numeros ( Estado llamada )
+- Renderiza un botton Hang que se activa cuando se cambia el estado de llamada (Estado llamada terminada )
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##Action button
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Renderiza un button con texto recibido
+- Pasa la accion recibida
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##Keyboard
 
-## Learn More
+- Renderiza key para cada numero de 0 a 9 y renderiza el valor "delete".
+- Pasa la accion a cada de los key para mostrar los numeros en el display.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Key
+-Renderiza un button con un texto recibido.
