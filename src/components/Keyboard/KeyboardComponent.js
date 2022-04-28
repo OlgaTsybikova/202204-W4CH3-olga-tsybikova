@@ -4,7 +4,7 @@ import KeyComponent from "../KeyComponent/KeyComponent";
 const KeyboardComponent = () => {
   return (
     <div className="keyboard-container">
-      <ol class="keyboard">
+      <ol className="keyboard">
         {keys.map((key, index) => (
           <KeyComponent
             key={index}
