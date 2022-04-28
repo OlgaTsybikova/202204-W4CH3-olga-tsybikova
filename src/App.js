@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import KeyboardComponent from "./components/Keyboard/KeyboardComponent";
 import InfoComponent from "./components/InfoComponent/InfoComponent";
 import Context from "./components/context/Context";
+import DisplayComponent from "./components/DisplayComponent/DisplayComponent";
+import keys from "./data/keys";
+
 function App() {
   const [isCalling, setIsCalling] = useState(false);
   return (
@@ -14,9 +17,13 @@ function App() {
               <KeyboardComponent isCalling={isCalling} />
             </div>
             <div className="actions">
-              <span className="number">667359961</span>
-              <a href>Call</a>
-              <a href>Hang</a>
+              <DisplayComponent {...Context} />
+              <a href="#" className="call">
+                Call
+              </a>
+              <a href="#" className="hang active">
+                Hang
+              </a>
             </div>
           </main>
         </div>
